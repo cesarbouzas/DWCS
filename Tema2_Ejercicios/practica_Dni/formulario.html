@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <title>Formulario DNI</title>
+    <h1>Formulario DNI</h1>
+</head>
+
+<body>
+    <form id="formulario" name="formulario" action="validador.php" method="post">
+        <label for="nombre">Nombre :</label>
+        <input type="text" name="nombre" id="nombre"><br><br>
+        <label for="apellido1">Apellido 1</label>
+        <input type="text" name="apellido1" id="apellido1"><br><br>
+        <label for="apellido2">Apellido 2</label>
+        <input type="text" name="apellido2" id="apellido2"><br><br>
+        <label for="edad">Edad </label>
+        <input type="number" name="edad" id="edad" max="120" min="0" step="1" requiered>
+        <label for="fNac">Fecha Nacimiento</label>
+        <input type="date" name="fNac" id="fNac" required><br><br>
+        <label for="dni">DNI</label>
+        <input type="text" name="dni" id="dni" required><br><br>
+        <div>
+            <input type="submit">
+            <input type="reset">
+        </div>
+    </form>
+
+</body>
+
+
+</html>
