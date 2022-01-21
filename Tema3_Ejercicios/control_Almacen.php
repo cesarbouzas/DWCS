@@ -20,15 +20,26 @@ $muchotema="CREATE TABLE almacen (codigo int(4) UNSIGNED AUTO_INCREMENT PRIMARY 
                                     lugar varchar(100),
                                     capacidad int(5));";
 
+
+if(mysqli_query($con_bd,$muchotema)===TRUE){
+    echo('Se creo correctamente las tablas.</br>');
+}else{
+
+    echo('Error en la creaccion de la tabla'. mysqli_error($con_bd).'<br/>');
+}
+
+
+
+
+
 $muchotema="CREATE TABLE  caja (numreferencia char(5) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
                                    contenido varchar(100),
                                     valor int(5),
                                     almacen int(4) UNSIGNED,
-                                    FOREIGN KEY(almacen) REFERENCES almacen  
-                                    );";
-
-
-
+                                    FOREIGN KEY(almacen) REFERENCES almacen(codigo) 
+                                                            ON DELETE NOTACTION,
+                                                            ON UPDATE CASCADE, 
+                                    )";
 
 
 if(mysqli_query($con_bd,$muchotema)===TRUE){
@@ -37,6 +48,10 @@ if(mysqli_query($con_bd,$muchotema)===TRUE){
 
     echo('Error en la creaccion de la tabla'. mysqli_error($con_bd).'<br/>');
 }
+
+
+
+
 
 
 
