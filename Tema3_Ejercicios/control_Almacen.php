@@ -70,6 +70,7 @@ if(mysqli_query($con_bd,$muchotema)===TRUE){
 
 $muchotema="INSERT INTO almacen(lugar,capacidad) VALUES ('Ernesto che guevara',35)";
 
+
 if(mysqli_query($con_bd,$muchotema)===TRUE){
     echo("Introducimos alamecen correctamente.\n");
 }else{
