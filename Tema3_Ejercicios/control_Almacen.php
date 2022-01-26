@@ -1,5 +1,6 @@
 <?php
-$con_bd=@mysqli_connect('localhost','admin','21212121');
+
+$con_bd=@mysqli_connect('localhost','cesar','21212121');
 if(!$con_bd){
     echo('Error número '.mysqli_connect_errno.'al establecer la conexión'.mysqli_connect_error().'/n');
 
@@ -7,6 +8,17 @@ if(!$con_bd){
     echo("Conexion establecida con exito .\n");
     
 }
+
+
+
+if(mysqli_query($con_bd,'DROP DATABASE almacenes')===TRUE){
+    echo("Se borró correctamente a BD llamada alamacenes.\n");
+}else{
+
+    echo('Error en el borrado de la BD :'. mysqli_error($con_bd)."\n");
+}
+
+
 // creaccion de una base de datos
 if(mysqli_query($con_bd,'CREATE DATABASE almacenes')===TRUE){
     echo("Se creo correctamente a BD llamada alamacenes.\n");
@@ -29,10 +41,10 @@ $muchotema="CREATE TABLE almacen (codigo int(4) UNSIGNED AUTO_INCREMENT PRIMARY 
 
 
 if(mysqli_query($con_bd,$muchotema)===TRUE){
-    echo("Se creo correctamente las tablas.\n");
+    echo("Se creo correctamente las tabla alamacen.\n");
 }else{
 
-    echo('Error en la creaccion de la tabla '. mysqli_error($con_bd)."\n");
+    echo('Error en la creaccion de la tabla alamacen'. mysqli_error($con_bd)."\n");
 }
 
 
@@ -50,14 +62,20 @@ $muchotema="CREATE TABLE  caja (numreferencia int(5) UNSIGNED AUTO_INCREMENT PRI
 
 
 if(mysqli_query($con_bd,$muchotema)===TRUE){
-    echo("Se creo correctamente las tablas.\n");
+    echo("Se creo correctamente las tabla caja.\n");
 }else{
 
-    echo('Error en la creaccion de la tabla :'. mysqli_error($con_bd)."\n");
+    echo('Error en la creaccion de la tabla caja:'. mysqli_error($con_bd)."\n");
 }
 
+$muchotema="INSERT INTO almacen(lugar,capacidad) VALUES ('Ernesto che guevara',35)";
 
+if(mysqli_query($con_bd,$muchotema)===TRUE){
+    echo("Introducimos alamecen correctamente.\n");
+}else{
 
+    echo('Error en la introduccion del almacen:'. mysqli_error($con_bd)."\n");
+}
 
 
 
