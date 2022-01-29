@@ -76,26 +76,32 @@ if(mysqli_query($con_bd,$muchotema)===TRUE){
 
 
 $muchotema="INSERT INTO almacen(lugar,capacidad) VALUES 
-('Ernesto che guevara',35)
-('Fernando wirtz ,4')
-('casa dios , 1)";
+('Ernesto che guevara',35),
+('Fernando wirtz',4),
+('casa dios',1)";
 
 
 
 if(mysqli_query($con_bd,$muchotema)===TRUE){
-    echo("Introducimos alamecen correctamente.\n");
+    echo("Introducimos alamecenes correctamente.\n");
 }else{
 
-    echo('Error en la introduccion del almacen:'. mysqli_error($con_bd)."\n");
+    echo('Error en la introduccion los almacenes:'. mysqli_error($con_bd)."\n");
 }
 
-
+$muchotema="INSERT INTO caja(contenido,valor,almacen) VALUES 
+('llaves coche de cesar',200,1),
+('libro sql',12,2),
+('libro Nodejs',26,2),
+('libro despliegue roollo',999,2),
+('libro de DIW',19.99,2),
+('Santo grial con la salvacion para el Covid',0,3)";
 
 if(mysqli_query($con_bd,$muchotema)===TRUE){
-    echo("Se añadio correctamente el contenido.\n");
+    echo("Se añadio correctamente el contenido en las cajas.\n");
 }else{
 
-    echo('Error en la introduccion del contenido '. mysqli_error($con_bd)."\n");
+    echo('Error en la introduccion del contenido en las cajas '. mysqli_error($con_bd)."\n");
 }
 
 
