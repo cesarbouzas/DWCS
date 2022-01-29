@@ -76,9 +76,11 @@ if(mysqli_query($con_bd,$muchotema)===TRUE){
 
 
 $muchotema="INSERT INTO almacen(lugar,capacidad) VALUES 
-('Ernesto che guevara',35),
-('Fernando wirtz',4),
-('casa dios',1)";
+('Ernesto che guevara, a Coruña',35),
+('Fernando wirtz,A Coruña',4),
+('casa dios , BILBAO',1),
+('poligono sabon,A Coruña',100)";
+
 
 
 
@@ -95,7 +97,10 @@ $muchotema="INSERT INTO caja(contenido,valor,almacen) VALUES
 ('libro Nodejs',26,2),
 ('libro despliegue roollo',999,2),
 ('libro de DIW',19.99,2),
-('Santo grial con la salvacion para el Covid',0,3)";
+('Santo grial con la salvacion para el Covid',0,3),
+('freno de mano',45,4),
+('caja de cambio',189,4),
+('horquilla delantera',23,4)";
 
 if(mysqli_query($con_bd,$muchotema)===TRUE){
     echo("Se añadio correctamente el contenido en las cajas.\n");
