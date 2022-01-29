@@ -49,6 +49,12 @@ $muchotema="CREATE TABLE  caja (numreferencia int(5) UNSIGNED AUTO_INCREMENT PRI
                                     )";
 
 
+
+
+
+
+
+
 if(mysqli_query($con_bd,$muchotema)===TRUE){
     echo("Se creo correctamente las tablas.\n");
 }else{
@@ -56,8 +62,22 @@ if(mysqli_query($con_bd,$muchotema)===TRUE){
     echo('Error en la creaccion de la tabla :'. mysqli_error($con_bd)."\n");
 }
 
+$muchotema="INSERT INTO almacenes(lugar ,capacidad)
+VALUES('$_POST[lugar]','$_POST[capacidad]')
+";
 
 
+
+
+
+
+
+if(mysqli_query($con_bd,$muchotema)===TRUE){
+    echo("Se añadio correctamente el contenido.\n");
+}else{
+
+    echo('Error en la introduccion del contenido '. mysqli_error($con_bd)."\n");
+}
 
 
 
