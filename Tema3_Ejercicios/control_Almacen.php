@@ -76,11 +76,12 @@ if(mysqli_query($con_bd,$muchotema)===TRUE){
 
 
 $muchotema="INSERT INTO almacen(lugar,capacidad) VALUES 
-('Ernesto che guevara, A Coruña',35),
-('Fernando wirtz,A Coruña',4),
-('casa dios , BILBAO',1),
-('poligono sabon,A Coruña',100),
-('poligono sabon,A Coruña',10)";
+('Ernesto che guevara, A Coruña',35),/*almacen1*/
+('Fernando wirtz,A Coruña',4),/*almacen 2*/
+('casa dios , BILBAO',1),/*almacen 3*/
+('poligono sabon,A Coruña',100),/*almacen 4*/
+('poligono sabon,A Coruña',10),/*almacen 5*/
+('tres cruces , Verin',999)";/*almacen 6*/
 
 
 
@@ -102,7 +103,8 @@ $muchotema="INSERT INTO caja(contenido,valor,almacen) VALUES
 ('freno de mano',45,4),
 ('caja de cambio',189,4),
 ('horquilla delantera',23,5),
-('horquilla trasera',149,5)";
+('horquilla trasera',149,5),
+('Libro del SQL',12,2)";
 
 
 if(mysqli_query($con_bd,$muchotema)===TRUE){
