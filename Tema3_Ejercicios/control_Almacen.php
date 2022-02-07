@@ -114,6 +114,14 @@ if(mysqli_query($con_bd,$muchotema)===TRUE){
     echo('Error en la introduccion del contenido en las cajas '. mysqli_error($con_bd)."\n");
 }
 
+$muchotema="SELECT a.codigo, a.lugar,a.capacidad, count(c.numreferencia) AS articulos FROM almacen AS a JOIN caja AS c ON a.codigo=c.almacen GROUP BY a.lugar HAVING a.capacidad<=count(c.numreferencia)";
+
+if(mysqli_query($con_bd,$muchotema)===TRUE){
+echo("Consulta realizada correctamente\n");
+}else{
+
+echo('Error en la consulta'. mysqli_error($con_bd)."\n");
+}
 
 
 
