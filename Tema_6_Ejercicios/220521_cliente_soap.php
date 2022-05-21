@@ -9,7 +9,7 @@
 <body>
     <pre>
 <?php
-$servicio=new SoapClient("htttps:////cvnet.cpd.ua.es/servicioweb/publicos/pub_gestdocente.asmx?wsdl");
+$servicio=new SoapClient("https://cvnet.cpd.ua.es/servicioweb/publicos/pub_gestdocente.asmx?wsdl");
 $parametros=["es","2019"];
 $titulos=$servicio->wstitulosuni($parametros);
 var_dump($parametros);
