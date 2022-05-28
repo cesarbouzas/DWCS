@@ -9,12 +9,14 @@
 <body>
     <pre>
 <?php
-$servicio=new SoapClient("https://cvnet.cpd.ua.es/servicioweb/publicos/pub_gestdocente.asmx?wsdl");
+$clienteSoap=new SoapClient("https://cvnet.cpd.ua.es/servicioweb/publicos/pub_gestdocente.asmx?wsdl");
 $parametros=["es","2019"];
-$titulos=$servicio->wstitulosuni($parametros);
-var_dump($parametros);
-var_dump($titulos);
-
+$titulos=$clienteSoap->wstitulosuni($parametros);
+foreach($titulos as $k->$v){
+    foreach ($v as $vv->$vv){
+       var_dump($vv);
+    }
+}
 ?>
 </pre>
 </body>
