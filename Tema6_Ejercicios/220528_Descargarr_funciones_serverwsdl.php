@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 <style>
-#contendorFunciones:nth-child(2n)  {
+#contenedorFunciones:nth-child(2n)  {
     background:green;
    size: 2px;
     }
