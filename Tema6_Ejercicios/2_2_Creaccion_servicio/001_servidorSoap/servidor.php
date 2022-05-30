@@ -10,7 +10,7 @@ public function saludo($nombre){
     return "hola $nombre";
 }
 }
-$uri='hhtp://localhost/Tema6_ejercicios/2_2_Creacion_servicio/001_servidorSopar';
+$uri='http://localhost/Tema6_ejercicios/2_2_Creacion_servicio/001_servidorSoap';
 $parametros=['uri'=>$uri];
 try{
 $server=new SoapServer(NULL,$parametros);
