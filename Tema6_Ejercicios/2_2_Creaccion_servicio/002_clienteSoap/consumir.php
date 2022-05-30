@@ -1,10 +1,10 @@
 <?php
-$url='http://localhost/Tema6_ejercicios/2_2_Creacion_servicio/001_servidorSoap/servidor.php';
-$uri='http://localhost/Tema6_ejercicios/2_2_Creacion_servicio/001_servidorSoap';
+$url='http://localhost/2_2_Creacion_servicio/001_servidorSoap/servidor.php';
+$uri='http://localhost/2_2_Creacion_servicio/001_servidorSoap';
 $paramSaludo=["texto"=>"Manolo"];
 $param=["a"=>"51","b"=>"29"];
 try{
-    $cliente=new SoapClient(NULL,['location'=>$url,"url"=>$url,'trace'=>true]);
+    $cliente=new SoapClient(null,['location'=>$url,"uri"=>$uri,'trace'=>true]);
 }catch(SoapFault $f){
     echo "Error:".$f->getMessage();
 }
