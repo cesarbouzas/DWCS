@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba Cliente SOAP sin WSDL</title>
+</head>
+
+<body>
+    <fieldset>
+        <legend>Formulario para el uso del servicio Web 2_2"</legend>
+        <form method="POST" action="https://dawcbs.000webhostapp.com/2_2_Creaccion_servicio/002_clienteSoap/consumir.php">
+
+            <p>
+                <h3>Introduce un nombre para el saludo</h3>
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" required/>
+            </p>
+            <p>
+                <h3>Introduce los valores para las operaciones</h3>
+                <label>a=</label><input type="number" id="a" name="a" required/>
+                <label>b=</label><input type="number" id="b" name="b" required/>
+            </p>
+            <p>
+                <input type="submit" />
+                <input type="reset" />
+            </p>
+        </form>
+    </fieldset>
+</body>
+
+</html>
