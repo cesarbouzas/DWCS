@@ -7,7 +7,7 @@ $pass="21212121";
 $conexProy=new PDO($dsn,$user,$pass);
 //para obtener informacion de la conexion getAttribute 
 $version=$conexProy->getAttribute(PDO::ATTR_SERVER_VERSION);
-echo "Vérsion =$version.\n"*;
+echo "Vérsion =$version.\n";
 //Devuleve los valores de las colummnas en maysculas
 $version=$conexProy->setAttribute(PDO::ATTR_CASE,PDO::CASE_UPPER);
 /*
