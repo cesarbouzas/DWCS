@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+</head>
+
+<body>
+    <fieldset>
+        <legend>Entrada de Datos Tema 7 1.3</legend>
+        <form action="usuario.php" method="get" name="datos_usuario" onsubmit="return validarEmail()">
+            <input type="text" id="email" />
+            <p>
+                <input type="submit" onclick="return validarEmail()">
+                <input type="reset" />
+            </p>
+        </form>
+    </fieldset>
+
+    <script type="text/javascript">
+        function validarEmail() {
+            let valor = document.getElementById("email").value;
+            let pos_arroba = valor.indexOf("@");
+            let pos_punto = valor.indexOf(".");
+
+            if ((pos_arroba < 1) || (pos_punto < pos_arroba + 2) || pos_punto == valor.length) {
+                alert("direccion de correo no valida");
+                return false;
+            } else {
+
+                $.ajax({
+                    type: "POST",
+                    url: "email.php",
+                    data: "email=" + valor,
+                    statusCode: {
+                        404: function() {
+                            alert('Página no encontrada');
+                        }
+                    },
+                    success: function(result) {
+                        alert("Resultado:" + result);
+                    }
+                });
+                return false;
+            }
+        }
+    </script>
+
+
+
+</body>
+
+</html>
